@@ -7,6 +7,10 @@ root.title("Clock")
 root.geometry("1920x1080")
 root.config(bg="Black")
 
+
+def fullscreen():
+    root.attributes("-fullscreen",not root.attributes("-fullscreen"))
+
 def time():
     t = strftime("%H:%M:%S %p")
     label.config(text=t)
@@ -26,6 +30,10 @@ label.pack(anchor='s')
 label2 =Label(root,font=("Helvetica",90), background="Black",foreground="White")
 label2.pack(anchor='s')
 
+
 time()
 date()
+
+root.bind('<Escape>', lambda e: fullscreen())
+
 mainloop()
