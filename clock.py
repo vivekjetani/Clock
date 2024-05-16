@@ -10,6 +10,7 @@ root.config(bg="Black")
 def time():
     t = strftime("%H:%M:%S %p")
     label.config(text=t)
+    label.after(1000,time)
 
 
 label = Label(root ,font=("Helvetica",180), background="Black",foreground="White")
